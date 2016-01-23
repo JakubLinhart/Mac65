@@ -2,3 +2,7 @@ bin/
 obj/
 /TestResults
 /tools
+/*.suo
+/.vs
+/Mac65.VisualStudio/*.user
+/packages
