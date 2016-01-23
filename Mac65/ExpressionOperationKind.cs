@@ -1,0 +1,29 @@
+namespace Mac65
+{
+    internal enum ExpressionOperationKind
+    {
+        Number,
+        Expression,
+        Add,
+        Sub,
+        Mult,
+        Div,
+        BitwiseAnd,
+        BitwiseOr,
+        BitwiseXor,
+        LowByte,
+        HighByte,
+        UnaryMinus,
+        Equal,
+        NotEqual,
+        SmallerThan,
+        GreaterThan,
+        SmallerThanOrEqual,
+        GreaterThanOrEqual,
+        LogicalAnd,
+        LogicalOr,
+        LogicalNot,
+        Def,
+        Ref,
+    }
+}
