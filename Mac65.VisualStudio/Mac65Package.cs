@@ -15,6 +15,7 @@ namespace Mac65.VisualStudio
     [ProvideProjectFactory(typeof (Mac65ProjectFactory), "Mac65", "Mac65 Project Files (*.m65proj);*.m65proj", "m65proj",
         "m65proj", @"Templates\Projects", LanguageVsTemplate = "Mac65", NewProjectRequireNewFolderVsTemplate = false)]
     [ProvideProjectItem(typeof(Mac65ProjectFactory), "Mac65 Items", @"Templates\ProjectItems\Mac65", 500)]
+    [ProvideObject(typeof(GeneralPropertyPageAdapter))]
     public sealed class Mac65Package : ProjectPackage
     {
         public const string PackageGuid = "8173272D-8BE3-4B85-9254-A5DCBC202312";

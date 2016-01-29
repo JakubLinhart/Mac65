@@ -185,11 +185,16 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xaml" />
+    <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassificationFormat.cs" />
     <Compile Include="ClassificationParserHandler.cs" />
+    <Compile Include="GeneralPropertyPage.cs" />
+    <Compile Include="GeneralPropertyPageAdapter.cs" />
     <Compile Include="Mac65.VisualStudio.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -198,10 +203,15 @@
     <Compile Include="Mac65ClassificationTypeDefinition.cs" />
     <Compile Include="Mac65Classifier.cs" />
     <Compile Include="Mac65ClassifierProvider.cs" />
+    <Compile Include="Mac65ConfigProvider.cs" />
     <Compile Include="Mac65Language.cs" />
     <Compile Include="Mac65Package.cs" />
+    <Compile Include="Mac65ProjectConfig.cs" />
     <Compile Include="Mac65ProjectFactory.cs" />
+    <Compile Include="Mac65ProjectFileNode.cs" />
     <Compile Include="Mac65ProjectNode.cs" />
+    <Compile Include="OAMac65Project.cs" />
+    <Compile Include="OAMac65ProjectFileItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
