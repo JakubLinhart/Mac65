@@ -2,33 +2,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mac65
 {
     public class MemoryChunk : IEnumerable<byte>
     {
-        public ushort StartAddress { get; private set; }
-        private readonly byte[] instructionBuffer;
-
-        public MemoryChunk(ushort startAddress, IEnumerable<byte> instructionBuffer)
+        public MemoryChunk(ushort startAddress, IEnumerable<byte> buffer)
         {
             StartAddress = startAddress;
-            this.instructionBuffer = instructionBuffer.ToArray();
-            Length = this.instructionBuffer.Length;
+            Buffer = buffer.ToArray();
+
+            if (Buffer.Length > ushort.MaxValue)
+            {
+                throw new InvalidOperationException("Chunk buffer to large: " + Buffer.Length);
+            }
+            Length = (ushort) Buffer.Length;
         }
+
+        public ushort StartAddress { get; private set; }
 
         public byte this[ushort index]
         {
-            get { return instructionBuffer[index]; }
+            get { return Buffer[index]; }
         }
 
-        public int Length { get; private set; }
+        public byte[] Buffer { get; }
+
+        public ushort Length { get; private set; }
 
         public IEnumerator<byte> GetEnumerator()
         {
-            return ( (IEnumerable<byte>)instructionBuffer ).GetEnumerator();
+            return ((IEnumerable<byte>) Buffer).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
